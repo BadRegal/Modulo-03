@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+		Nombre:			<input type="text" name="nom" id="v1"><br>
+        Año:    		<input type="number" name="nom" id="v2"><br>
+        Fabricante 		<input type="text" name="nom" id="v3"><br>
+        Valor: 			<input type="number" name="nom" id="v4"><br>
+         <button onclick="agregar();">ingresar</button>
+         <p id="ar"></p>
+
+	<script type="text/javascript">
+        class elemento{
+            constructor(v1,v2,v3,v4){
+                this.valor1=v1;
+                this.valor2=v2;
+                this.valor3=v3;
+                this.valor4=v4;
+            }
+           suma(){
+           		let ag = this.valor1+"  "+this.valor2+"  "+this.valor3+"  "+this.valor4;
+				return ag;
+           }
+        }
+
+        function agregar(){
+            let v1=document.getElementById('v1').value;
+            let v2=document.getElementById('v2').value;
+            let v3=document.getElementById('v3').value;
+            let v4=document.getElementById('v4').value;
+            var val=new elemento(v1,v2,v3,v4);
+            let res=val.suma();
+			document.getElementById('ar').innerHTML=res;
+		}
+       
+           
+    </script>
+
+</body>
+</html>
