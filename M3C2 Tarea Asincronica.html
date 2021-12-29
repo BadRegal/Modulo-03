@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Tarea Asincronica</h1>
+
+	Ingrese Radio: <input type="text" name="ra" id="ra">
+	<button onclick="ingresar();">Ingresar</button>
+	<p id="dia"></p>
+	<p id="per"></p>
+	<p id="ar"></p>
+
+	<script type="text/javascript">
+		class resultado{
+			constructor(v1,v2,v3){
+			 	this.valor1=v1;
+			 	this.valor2=v2;
+			 	this.valor3=v3;
+			 }
+			diame(){
+				let diam= parseInt(this.valor1)*2;
+				return diam
+			}
+			perim(){
+				let peri= parseInt(this.valor2)*2*Math.PI;
+				return peri;
+			}
+			area(){
+				let are= parseInt (this.valor3)*parseInt(this.valor3)*Math.PI;
+				return are;
+			}
+		}
+		function ingresar(){
+			let v1=document.getElementById('ra').value;
+			let v2=document.getElementById('ra').value;
+			let v3=document.getElementById('ra').value;
+			let obj=new resultado();
+			obj.valor1=v1;
+			obj.valor2=v2;
+			obj.valor3=v3;
+			document.getElementById('dia').innerHTML="El diametro es: "+obj.diame();
+			document.getElementById('per').innerHTML="El perimetro es: "+obj.perim();
+			document.getElementById('ar').innerHTML="El area es :"+obj.area();
+		}
+
+	</script>
+
+
+
+</body>
+</html>
