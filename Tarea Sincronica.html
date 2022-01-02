@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<p id="ejem"></p>
+	<p id="ejem1"></p>
+    <script type="text/javascript">
+		function interface(some) {
+			document.getElementById('ejem').innerHTML = some;
+		}
+		function interface1(some) {
+			document.getElementById('ejem1').innerHTML = some;
+		}
+		let promesa=new Promise(function(myResolve, myReject){
+			let req=new XMLHttpRequest();
+			req.open('GET', 'tarea.html');
+			req.onload=function(){
+				if (req.status==200){
+					myResolve(req.response);
+				}else{
+					myReject("Archivo no existe")
+				}
+			}
+			req.send();
+		});
+
+		let promesa1=new Promise(function(myResolve, myReject){
+			let req=new XMLHttpRequest();
+			req.open('GET','tarea1.html');
+			req.onload=function(){
+				if (req.status==200){
+					setTimeout(function(){
+						myResolve(req.response);
+					},2000);
+				}else{
+					myReject("Archivo no existe")
+				}
+			}
+			req.send();
+		});
+
+		promesa.then(
+			function(value){
+				interface(value);
+			},
+			function(error){
+				interface(error);
+			}
+		);
+
+		promesa1.then(
+			function(value){
+				interface1(value);
+			},
+			function(error){
+				interface1(error);
+			}
+		);
+	
+	</script>
+
+</body>
+</html>
