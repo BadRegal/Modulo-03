@@ -17,7 +17,7 @@
 		}
 		let promesa=new Promise(function(myResolve, myReject){
 			let req=new XMLHttpRequest();
-			req.open('GET', 'tarea.html');
+			req.open('GET', 'Tarea.html');
 			req.onload=function(){
 				if (req.status==200){
 					myResolve(req.response);
@@ -30,7 +30,7 @@
 
 		let promesa1=new Promise(function(myResolve, myReject){
 			let req=new XMLHttpRequest();
-			req.open('GET','tarea1.html');
+			req.open('GET','Tarea1.html');
 			req.onload=function(){
 				if (req.status==200){
 					setTimeout(function(){
